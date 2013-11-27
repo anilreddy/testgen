@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'cucumber'
 gem 'rspec'
+gem 'data_magic'
+gem 'pretty_face'
 <% unless pageobject_driver.downcase == 'none' -%>
 gem 'page-object'
 <% end -%>
