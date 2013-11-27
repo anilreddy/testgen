@@ -15,6 +15,18 @@ Before do
 end
 
 
-After do
+After do |scenario|
+  scr_name = "#{Time.now.strftime('%Y%m%d-%H%M%S')}.png"
+  if scenario.failed?
+    status = "Failed Screenshot"
+    screenshot = "#{status}_#{scr_name}"
+    @browser.screenshot.save(screenshot)
+    embed(screenshot, 'image/png', "#{status}")
+  else
+    status = "Passed Screenshot"
+    screenshot = "#{status}_#{scr_name}"
+    @browser.screenshot.save(screenshot)
+    embed(screenshot, 'image/png', "#{status}")
+  end
   @browser.close
 end
