@@ -1,1 +1,6 @@
 default: --no-source --color --format pretty
+
+#For Reporting use them
+
+dev: FIG_NEWTON_FILE=dev.yml --format PrettyFace::Formatter::Html --out dev_report/index.html
+test: FIG_NEWTON_FILE=test.yml --format PrettyFace::Formatter::Html --out test_report/index.html
